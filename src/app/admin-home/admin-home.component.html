@@ -1,0 +1,34 @@
+<nav class="navbar">
+  <ul>
+    <li><h3>Admin Dashboard</h3></li>
+  </ul>
+  <div class="navbar-buttons">
+    <a routerLink="/home">Home</a>&nbsp;
+    <a class="btn btn-danger" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link  href="/admin-home/admin-home.component.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <div class="dashboard-links">
+    <a href="/create-room">Create Room</a>
+    <a href="/get-room">View Rooms</a>
+    <a href="/get-user">View Users</a>
+    <a href="/get-booking">View Bookings</a>
+    <a href="/get-payment">View Payments</a>
+    <a href="/assign-room-to-user">Assign Room to User</a>
+    <a href="/assign-booking-to-room">Assign Booking to Room</a>
+    <a href="/assign-payment-to-booking">Assign Payment to Booking</a>
+  </div>
+</div>
+
+</body>
+</html>

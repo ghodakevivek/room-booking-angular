@@ -1,0 +1,101 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+
+<h3>Create User</h3>
+<br> 
+
+<form (ngSubmit) ="onSubmit()" #userForm="ngForm" novalidate>
+
+    <div class="form-group">
+        <label>First name : </label>
+        <input type="text" class="form-control" id="userFirstName" 
+            [(ngModel)] = "user.userFirstName" name="userFirstName" required>
+        <div *ngIf ="userForm.controls['userFirstName'].invalid && (userForm.controls['userFirstName'].dirty || userForm.controls['userFirstName'].touched)" class="alert alert-danger">
+            First name is required.
+        </div>
+    </div> <br>
+
+
+    <div class="form-group">
+        <label>Last name : </label>
+        <input type="text" class="form-control" id="userLastName" 
+            [(ngModel)] = "user.userLastName" name="userLastName" required>
+        <div *ngIf ="userForm.controls['userLastName'].invalid && (userForm.controls['userLastName'].dirty || userForm.controls['userLastName'].touched)" class="alert alert-danger">
+            Last name is required.
+        </div>
+    </div> <br>
+
+
+    <div class="form-group">
+        <label>Aadhar : </label>
+        <input type="text" class="form-control" id="userAadhar" 
+            [(ngModel)] = "user.userAadhar" name="userAadhar" required pattern="[0-9]{12}">
+        <div *ngIf="userForm.controls['userAadhar'].invalid && (userForm.controls['userAadhar'].dirty || userForm.controls['userAadhar'].touched)" class="alert alert-danger">
+             Please enter a valid Aadhar number (12 digits).
+        </div>
+    </div> <br>  
+
+        
+    <div class="form-group">
+        <label> Age : </label>
+        <input type="number" class="form-control" id="userAge" 
+             [(ngModel)] = "user.userAge" name="userAge" required min="18">
+        <div *ngIf="userForm.controls['userAge'].invalid && (userForm.controls['userAge'].dirty || userForm.controls['userAge'].touched)" class="alert alert-danger">
+            Please enter a valid age (must be 18 or older).
+        </div>
+    </div> <br>
+
+            
+    <div class="form-group">
+        <label>City : </label>
+        <input type="text" class="form-control" id="userCity" 
+            [(ngModel)] = "user.userCity" name="userCity" required>
+        <div *ngIf="userForm.controls['userCity'].invalid && (userForm.controls['userCity'].dirty || userForm.controls['userCity'].touched)" class="alert alert-danger">
+            City is required.
+        </div>
+    </div> <br>
+
+                
+    <div class="form-group">
+        <label>Mobile No. : </label>
+        <input type="tel" class="form-control" id="userMobile" 
+            [(ngModel)] = "user.userMobile" name="userMobile" required pattern="[0-9]{10}">
+        <div *ngIf="userForm.controls['userMobile'].invalid && (userForm.controls['userMobile'].dirty || userForm.controls['userMobile'].touched)" class="alert alert-danger">
+            Please enter a valid 10-digit mobile number.
+        </div>
+    </div> <br>
+
+
+    <div class="form-group">
+        <label>Email address  : </label>
+        <input type="email" class="form-control" id="userEmail" 
+            [(ngModel)] = "user.userEmail" name="userEmail" required>
+        <div *ngIf="userForm.controls['userEmail'].invalid && (userForm.controls['userEmail'].dirty || userForm.controls['userEmail'].touched)" class="alert alert-danger">
+            Please enter a valid email address.
+        </div>
+    </div> <br>
+
+
+    <div class="form-group">
+        <label>User Name : </label>
+        <input type="text" class="form-control" id="userName" 
+            [(ngModel)] = "user.userName" name="userName" required minlength="4" pattern="[a-zA-Z0-9]+">
+        <div *ngIf="userForm.controls['userName'].invalid && (userForm.controls['userName'].dirty || userForm.controls['userName'].touched)" class="alert alert-danger">
+        Please enter a valid username (at least 4 characters, alphanumeric only).
+        </div>
+    </div> <br>
+
+
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" id="userPassword"
+           [(ngModel)]="user.userPassword" name="userPassword" required minlength="8">
+        <div *ngIf="userForm.controls['userPassword'].invalid && (userForm.controls['userPassword'].dirty || userForm.controls['userPassword'].touched)" class="alert alert-danger">
+            Please enter a valid password (at least 8 characters).
+        </div>
+    </div> <br>
+    
+
+        <button class="btn btn-success" type="submit">Submit</button>
+</form>
+</div>

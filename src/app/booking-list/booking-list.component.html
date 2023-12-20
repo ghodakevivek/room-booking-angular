@@ -1,0 +1,36 @@
+<nav class="navbar">
+    <ul>
+      <li><h3>Booking List</h3></li>
+    </ul>
+    <div class="navbar-buttons">
+      <a routerLink="/admin-home">Dashboard</a>
+    </div>
+  </nav>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Booking Id</th>
+            <th>Check in date: </th>
+            <th>Check out date: </th>
+            <th>Total booking days: </th>
+            <th>Total persons: </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let booking of booking">
+            <td>{{booking.bookingId}}</td>
+            <td>{{booking.checkInDate}}</td>
+            <td>{{booking.checkOutDate}}</td>
+            <td>{{booking.bookingDays}}</td>
+            <td>{{booking.bookingPersons}}</td>
+            <td><button (click) ="updateBooking(booking.bookingId)" class="btn btn-info">
+            Update</button></td>
+            <td><button (click) ="deleteBooking(booking.bookingId)" class="btn btn-danger">
+            Delete</button></td>
+
+        </tr>
+    </tbody>
+</table>

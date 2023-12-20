@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <ul>
+    <li><h3>Login Here</h3></li>
+  </ul>
+  <div class="navbar-buttons">
+    <a routerLink="/home">Home</a>
+  </div>
+</nav>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href="/login/login.component.css">
+</head>
+<body>
+
+<div>
+  <div class="login-container">
+    <form class="login-form">
+
+    <div class="form-group">
+        <label>Email Id</label>
+        <input type="email" [(ngModel)]= "userEmail" [ngModelOptions]="{standalone: true}" class="form-control" id="userEmail"  placeholder="Enter Email">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)] ="userPassword" [ngModelOptions]="{standalone: true}" class="form-control" id="userPassword" class="form-control" placeholder="Enter Password">
+      </div>
+
+     <button type="submit" class="btn btn-primary" (click) ="Login()">Login</button><br>
+    <div class="text-center mt-3">
+      <p>Don't have an account? <a routerLink="/signup">Register</a></p>
+    </div>
+
+
+
+  </form>
+</div>
+
+</div>
+
+
+

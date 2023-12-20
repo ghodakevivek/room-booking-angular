@@ -1,0 +1,31 @@
+<nav class="navbar">
+    <ul>
+      <li><h3>Payment List</h3></li>
+    </ul>
+    <div class="navbar-buttons">
+      <a routerLink="/admin-home">Dashboard</a>
+    </div>
+  </nav><br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Payment Id</th>
+            <th>Payment amount: </th>
+            <th>Payment date: </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let payment of payment">
+            <td>{{payment.paymentId}}</td>
+            <td>{{payment.paymentAmount}}</td>
+            <td>{{payment.paymentDate}}</td>
+            <td><button (click) ="updatePayment(payment.paymentId)" class="btn btn-info">
+            Update</button></td>
+            <td><button (click) ="deletePayment(payment.paymentId)" class="btn btn-danger">
+            Delete</button></td>
+
+        </tr>
+    </tbody>
+</table>

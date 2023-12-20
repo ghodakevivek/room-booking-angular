@@ -1,0 +1,49 @@
+<div class="col-md-6 offset-md-3">
+    <br>
+
+    <h3>Update Booking</h3><br>
+
+    <form (ngSubmit) ="onSubmit()" #bookingForm="ngForm" novalidate>
+
+        <div class="form-group">
+            <label for="checkInDate">Check in date: </label>
+            <input type="date" class="form-control" id="checkInDate"
+                [(ngModel)] ="booking.checkInDate" name="checkInDate" required>
+            <div *ngIf ="bookingForm.controls['checkInDate'].invalid && (bookingForm.controls['checkInDate'].dirty || bookingForm.controls['checkInDate'].touched)" class="alert alert-danger">
+                Check in date is required.
+            </div>
+        </div> <br>
+        
+        
+        <div class="form-group">
+            <label for="checkOutDate">Check out date: </label>
+            <input type="date" class="form-control" id="checkOutDate"
+                [(ngModel)] ="booking.checkOutDate" name="checkOutDate" required>
+            <div *ngIf ="bookingForm.controls['checkOutDate'].invalid && (bookingForm.controls['checkOutDate'].dirty || bookingForm.controls['checkOutDate'].touched)" class="alert alert-danger">
+                Check out date is required.
+            </div>
+        </div> <br>
+        
+        
+        <div class="form-group">
+            <label for="bookingDays">Total booking days: </label>
+            <input type="number" class="form-control" id="bookingDays"
+                [(ngModel)] ="booking.bookingDays" name="bookingDays" required>
+            <div *ngIf ="bookingForm.controls['bookingDays'].invalid && (bookingForm.controls['bookingDays'].dirty || bookingForm.controls['bookingDays'].touched)" class="alert alert-danger">
+                Total booking days are required.
+            </div>
+        </div> <br>   
+        
+        
+        <div class="form-group">
+            <label for="bookingPersons">Maximum persons: </label>
+            <input type="number" class="form-control" id="bookingPersons"
+                [(ngModel)] ="booking.bookingPersons" name="bookingPersons" required>
+            <div *ngIf ="bookingForm.controls['bookingPersons'].invalid && (bookingForm.controls['bookingPersons'].dirty || bookingForm.controls['bookingPersons'].touched)" class="alert alert-danger">
+                Maximum persons are required.
+            </div>
+        </div> <br>
+        
+        <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+        </div> 

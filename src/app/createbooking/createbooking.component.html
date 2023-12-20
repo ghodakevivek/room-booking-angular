@@ -1,0 +1,60 @@
+<nav class="navbar">
+    <ul>
+      <li><h3>Create Booking</h3></li>
+    </ul>
+    <div class="navbar-buttons">
+      <a routerLink="/user-home">Dashboard</a>
+    </div>
+  </nav><br>
+
+<div class="col-md-6 offset-md-3">
+
+<form (ngSubmit) ="onSubmit()" #bookingForm="ngForm" novalidate>
+
+
+
+<div class="form-group">
+    <label for="checkInDate">Check in date: </label>
+    <input type="date" class="form-control" id="checkInDate"
+        [(ngModel)] ="booking.checkInDate" name="checkInDate" required>
+    <div *ngIf ="bookingForm.controls['checkInDate'].invalid && (bookingForm.controls['checkInDate'].dirty || bookingForm.controls['checkInDate'].touched)" class="alert alert-danger">
+        Check in date is required.
+    </div>
+</div> <br>
+
+
+<div class="form-group">
+    <label for="checkOutDate">Check out date: </label>
+    <input type="date" class="form-control" id="checkOutDate"
+        [(ngModel)] ="booking.checkOutDate" name="checkOutDate" required>
+    <div *ngIf ="bookingForm.controls['checkOutDate'].invalid && (bookingForm.controls['checkOutDate'].dirty || bookingForm.controls['checkOutDate'].touched)" class="alert alert-danger">
+        Check out date is required.
+    </div>
+</div> <br>
+
+
+<div class="form-group">
+    <label for="bookingDays">Total booking days: </label>
+    <input type="number" class="form-control" id="bookingDays"
+        [(ngModel)] ="booking.bookingDays" name="bookingDays" required>
+    <div *ngIf ="bookingForm.controls['bookingDays'].invalid && (bookingForm.controls['bookingDays'].dirty || bookingForm.controls['bookingDays'].touched)" class="alert alert-danger">
+        Total booking days are required.
+    </div>
+</div> <br>   
+
+
+
+<label for="bookingPersons">Number of persons: </label>
+        <select class="form-control" id="bookingPersons" required
+        [(ngModel)]="booking.bookingPersons" name="bookingPersons">
+        <option *ngFor ="let i of persons" [value] ="i">{{i}}</option>
+    </select><br>
+
+<button  class="btn btn-success" type="submit">Submit</button>
+
+</form>
+
+</div> 
+
+
+

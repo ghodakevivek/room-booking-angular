@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <ul>
+    <li><h3>Assigning booking to room</h3></li>
+  </ul>
+  <div class="navbar-buttons">
+    <a routerLink="/user-home">Dashboard</a>
+  </div>
+</nav><br>
+
+
+<div class="col-md-6 offset-md-3">
+   
+    <form (ngSubmit) ="onSubmit()" #f="ngForm">
+      <div class="form-group">
+        <label>Booking ID: </label>
+        <input type="number" class="form-control" id="bookingId" [(ngModel)]= "bookingId" name="bookingId">
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Room ID: </label>
+        <input type="number" class="form-control" id="roomId" [(ngModel)]= "roomId" name="roomId">
+      </div>
+      <br>
+
+      <button class="btn btn-success" type="submit">Submit</button>
+      <!-- <button class="btn btn-success" type="submit">Back to Home</button> -->
+
+      &nbsp;
+    
+        <!-- <button ></button><a routerLink="/create-payment">Proceed</a> </button> -->
+
+      
+      <button class="btn btn-success" type="button" routerLink="/create-payment">Proceed</button>
+
+
+    </form>
+    {{ message }}
+  </div>
+
